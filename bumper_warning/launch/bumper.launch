@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch" />
+  <include file="$(find kobuki_keyop)/launch/safe_keyop.launch" />
+  <include file="$(find bumper_warning)/launch/bumper_warning.launch" />
+  <include file="$/launch/bumper_warning.cpp" />
+  <node name="bumper_warning" pkg="bumper_warning" type="bumper_warning_node" />
+</launch>

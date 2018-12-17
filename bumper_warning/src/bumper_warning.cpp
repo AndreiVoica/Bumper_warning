@@ -4,14 +4,12 @@
 #include <kobuki_msgs/MotorPower.h>
 #include "geometry_msgs/Twist.h"
 #include <sys/types.h>
-#include <signal.h>
 
 
 ros::Subscriber sub_bumper;
 ros::Subscriber sub_cliff;
 ros::Subscriber sub_teleop;
 ros::Publisher cmd_vel_pub;
-ros::Subscriber MotorPower;
 
 
 void clbk_bumper(const kobuki_msgs::BumperEvent::ConstPtr& msg){
@@ -40,6 +38,7 @@ void clbk_bumper(const kobuki_msgs::BumperEvent::ConstPtr& msg){
 void clbk_cliff(const kobuki_msgs::CliffEvent::ConstPtr& asd){
   //sub_teleop.shutdown();
   ROS_INFO("Cliff detected, move back!");
+     system("/home/ros/ros_ws/src/bumper_warning/src/script.sh");
 }
 
 

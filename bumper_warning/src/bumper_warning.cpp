@@ -25,12 +25,7 @@ void clbk_bumper(const kobuki_msgs::BumperEvent::ConstPtr& msg){
     ROS_INFO("Right bumper activated, turn left");
     system("/home/ros/ros_ws/src/bumper_warning/src/script.sh");
   }
-  geometry_msgs::Twist msgvel;
-  msgvel.linear.x = -10.0;
-  msgvel.linear.y = -10.0;
-  cmd_vel_pub.publish(msgvel);
 
-  ros::Duration(1.0).sleep();
 }
 
 
